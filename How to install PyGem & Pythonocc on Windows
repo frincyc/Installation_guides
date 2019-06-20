@@ -1,0 +1,25 @@
+This is a step by step guide on how I installed PyGem (https://github.com/mathLab/PyGeM) on Windows along with its major depency pythonocc (http://www.pythonocc.org).
+
+PyGeM (Python Geometrical Morphing) is a python package that allows you to deform a given geometry or mesh with different deformation techniques such as FFD, RBF and IDW.
+PyGeM requires numpy, scipy, matplotlib, vtk, numpy-stl, sphinx (for the documentation) and nose (for local test). Moreover PyGeM depends on OCC. These requirements cannot be satisfied through pip.
+
+System info:
+Windows 10, Python 3.6.7, Anaconda3
+
+Steps to install
+
+1) Install pythonocc with the below command in conda command prompt
+conda install -c conda-forge -c dlr-sc -c pythonocc -c oce -c 3dhubs pythonocc-core==0.18.1 python=3.6
+
+2) Clone/download PyGem from the official website (https://github.com/mathLab/PyGeM#dependencies-and-installation)
+Use the below git command for the same: 
+git clone https://github.com/mathLab/PyGeM
+
+3)Cd into the installed folder and type the below command in conda command prompt
+ python setup.py install
+ This will not only download PyGem, but also ensure that all the dependencies with their right versions are also downloaded, i.e numpy, scipy, matplotlib, vtk, numpy-stl, sphinx and nose.
+ 
+ Notes:
+ -I created a new environment with Python 3.6.8 installed and no other packages. Pythonocc 0.18.1 downgraded the Python version to 3.6.7, but it never affected the application I was working on.
+ -If you are trying to install on an old environment, it may or may not affect the versions of other packages already installed or in other case, the already installed versions might not be compatible with PyGem.
+ 
